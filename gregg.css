@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+body {
+    background-color: ivory;
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: ivory;
+}
+
+.business-name {
+    font-family: 'Playwrite AU NSW', cursive;
+    font-size: 2.5em; /* Adjust as needed */
+    color: #A13A02;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    display: inline-block; /* Change from block to inline-block for flexbox */
+    color: #A13A02;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-family: 'Playwrite AU NSW', cursive;
+    transition: all 1s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #A13A02;
+    color: ivory;
+}
+
+.content-section {
+    display: flex;
+    padding: 20px;
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Vertically align items */
+}
+
+.image-container {
+    flex: 1; /* Takes up available space */
+    text-align: center; /* Center image if it's smaller than container */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+
+.text-content {
+    flex: 2; /* Takes up more space than the image */
+    padding-right: 20px; /* Add some padding on the right */
+}
+
+.text-content h1 {
+    color: #A13A02;
+    font-family: 'Playwrite AU NSW', cursive;
+    font-size: 2em;
+}
+
+.text-content p {
+    font-family: sans-serif; /* Or any other readable font */
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-me-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-me-section h2 {
+    color: #A13A02;
+    font-family: 'Playwrite AU NSW', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-me-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: row-reverse; /* Image on the right */
+}
+
+.about-me-content .text-content {
+    flex: 2;
+    padding-left: 20px; /* Add padding on the left for text */
+    padding-right: 0; /* Reset right padding */
+}
+
+.about-me-content .image-container {
+    flex: 1;
+}
+
+/* Calendar Styles */
+.calendar-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.calendar-container h2 {
+    color: #A13A02;
+    font-family: 'Playwrite AU NSW', cursive;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.calendar-container .disclaimer {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 15px;
+    justify-content: center;
+}
+
+.day-column {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.day-column h3 {
+    color: #A13A02;
+    font-family: 'Playwrite AU NSW', cursive;
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.time-slot {
+    background-color: #f0f0f0;
+    border: 1px solid #eee;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.time-slot.available {
+    background-color: #e6ffe6; /* Light green for available */
+    color: #006400; /* Dark green text */
+}
+
+.time-slot.available:hover {
+    background-color: #c6ffc6; /* Lighter green on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        width: 100%; /* Ensure navbar takes full width */
+        text-align: center; /* Center the links */
+        margin-top: 10px; /* Space between business name and navbar */
+    }
+
+    .navbar a {
+        display: block; /* Stack links vertically */
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .content-section,
+    .about-me-content {
+        flex-direction: column;
+    }
+
+    .image-container,
+    .text-content {
+        flex: none; /* Remove flex grow/shrink */
+        width: 100%; /* Take full width */
+        padding: 0; /* Reset padding */
+    }
+
+    .text-content {
+        padding-top: 20px; /* Add space above text content */
+    }
+
+    .about-me-content .text-content {
+        padding-left: 0; /* Reset left padding for about me text */
+    }
+
+    .calendar-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+}
